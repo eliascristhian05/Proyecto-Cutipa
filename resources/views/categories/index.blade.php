@@ -1,53 +1,10 @@
 <x-app-layout>
     <x-slot name="header"><br/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-   
+   <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <div class="container">
-
-    
-    @if(Session::has('Mensaje'))
-    <div class="alert alert-success" role="alert">
-        {{Session::get('Mensaje')}}
-    </div>
-    
-    @endif
-    
-    <a href="{{ url('categories/create') }}" class="btn btn-success">Agregar Categoria</a>
-    <br/><br/>
-    
-    <table class="table table-light table-hover">
-        <thead class="thead-light">
-            <tr>
-                <th>Nro</th>
-                <th>Descripción</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-    
-        <tbody>
-        @foreach($categories as $category)
-            <tr>
-                <td>{{$loop->iteration}}</td>
-                <td>{{$category->description}}</td> 
-        
-                <td>
-                    <a class="btn btn-warning" href="{{ url('/categories/'.$category->id.'/edit') }}">
-                    Editar
-                    </a>
-                    
-                    <form method="post" action="{{ url('/categories/'.$category->id) }}" style="display:inline">
-                    {{csrf_field() }}
-                    {{ method_field('DELETE') }}
-                    <button class="btn btn-danger" type="submit" onclick="return confirm('¿Borrar?');" >Borrar</button>
-    
-                    </form>
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-    {{ $categories->links() }}
-</div>
+<livewire:category-component>
 </x-app-layout>
 
 

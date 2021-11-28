@@ -29,8 +29,5 @@ class CategoryComponent extends Component
         $this->nombre = "Editar Categoria";
     }
 
-    public function top()
-    {
-        $this->render();
-    }
+
 }

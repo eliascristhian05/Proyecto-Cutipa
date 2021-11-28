@@ -19,7 +19,7 @@
                 <td>{{$category->description}}</td> 
         
                 <td>
-                    <button wire:click="edit({{ $category->id }})" class="btn btn-warning">
+                    <button wire:click="edit({{ $category->id }})" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                         Editar
                     </button>
                     <button class="btn btn-danger" type="submit">Borrar</button>

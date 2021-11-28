@@ -11,6 +11,7 @@ use App\Http\Controllers\SaleController;
 use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\productoController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\SocialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,9 @@ Route::get('cart', 'App\Http\Controllers\ProductsController@cart');
 Route::get('add-to-cart/{id}', 'App\Http\Controllers\ProductsController@addToCart');
 
 Route::resource('articles', ArticleController::class);
+Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
+
+Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
 //Pero tambien puedes hacerlo asi  y arriba declaras el controladors
 /* Estan mal
 Route::resource('positions', PositionController::class);

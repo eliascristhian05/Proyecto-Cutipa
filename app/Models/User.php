@@ -31,6 +31,7 @@ class User extends Authenticatable
         'phone',
         'email',
         'password',
+        'fb_id',
 
     ];
 
