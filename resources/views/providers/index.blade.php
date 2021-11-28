@@ -2,7 +2,8 @@
     <x-slot name="header"><br/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-
+<div class="container">
+    
 @if(Session::has('Mensaje'))
 <div class="alert alert-success" role="alert">
     {{Session::get('Mensaje')}}
@@ -52,4 +53,6 @@
     </tbody>
 </table>
 {{ $providers->links() }}
+</div>
+
 </x-app-layout>

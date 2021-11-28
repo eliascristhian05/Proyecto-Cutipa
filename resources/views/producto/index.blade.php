@@ -84,7 +84,14 @@ body{
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-<h1>Lista de articulos en venta</h1>
+  <h1>
+    Lista de articulos en venta
+    <a href="{{route("dashboard")}}" class="btn btn-info">
+      Regresar
+    </a>
+  </h1>
+
+
 <button type="button" class="btn btn-outline-primary"><a class="nav-link" href="{{ route('producto.create') }}">Nuevo Producto</a></button>
 <div id="myBtnContainer">
 </div>
@@ -97,14 +104,14 @@ body{
   <div class="content">
   
   
-      <h4><center>{{$product->nombre}}</center></h4>
+      <h4><center>{{$product->name}}</center></h4>
     <center><img src="img/{{$product->imagen}}" width="50%" alt=""</center>
       
-      <center>{{$product->descripcion}}</center>
-      <p><center><strong>Precio :  </strong>{{$product->precio}}</center></p>
+      <center>{{$product->description}}</center>
+      <p><center><strong>Precio :  </strong>{{$product->price}}</center></p>
       
-     <a name=href="{{ route('producto.edit', $product) }}" class="btn btn-warning">Editar</a> 
-     <a name=href="{{ route('producto.edit', $product) }}" class="btn btn-warning">Eliminar</a> 
+     <a href="{{ route('producto.edit', $product) }}" class="btn btn-warning">Editar</a> 
+     <a href="{{ route('producto.edit', $product) }}" class="btn btn-warning">Eliminar</a> 
 
       
    

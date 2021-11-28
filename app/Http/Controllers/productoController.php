@@ -64,7 +64,7 @@ class productocontroller extends Controller
     'imagen'=>'required',
        ]);
        Producto::create($fields);*/
-       return redirect()->route('products')->with('status','Registro exitoso.');
+       return redirect()->route('producto.index')->with('status','Registro exitoso.');
     }
 
     /**

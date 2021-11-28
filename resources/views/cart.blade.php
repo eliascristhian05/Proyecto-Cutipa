@@ -9,7 +9,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Carrito de Compras</div>
-                <a href="{{url('products/')}}" class="btn btn-secondary btn-lg btn-block" role="button" aria-pressed="true">Productos</a>
+                <a href="{{route('products')}}" class="btn btn-secondary btn-lg btn-block" role="button" aria-pressed="true">
+                    Seguir comprando 😃
+                </a>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -46,21 +48,21 @@
                                 @foreach(session('cart') as $id => $details)
                                     <?php $valor += $details['price'] * $details['quantity'] ?>
                                 <tr>
-                                    <th>
+                                    <td>
                                     {{ $details['name']}}
-                                    </th>
-                                    <th>
+                                    </td>
+                                    <td>
                                     Bs./{{ $details['price']}}
-                                    </th>
-                                    <th>
+                                    </td>
+                                    <td>
                                     {{$details['quantity']}}
-                                    </th>
-                                    <th>
+                                    </td>
+                                    <td>
                                     Bs{{$details['price'] * $details['quantity']}}
-                                    </th>
-                                    <th>
+                                    </td>
+                                    <td>
                                     <img src="img/{{ $details['imagen'] }}" width="50" height="50"/>
-                                    </th>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </table>

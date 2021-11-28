@@ -29,12 +29,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //Esta bien asi 
 // Rutas privadas ADMIN
-Route::prefix('admin')->group(function () {
-    Route::resource('producto', productoController::class);
-    Route::resource('providers', ProviderController::class);
-    Route::resource('clients', ClientController::class);
-    Route::resource('categories','App\Http\Controllers\CategoryController');
-});
+
+Route::resource('producto', productoController::class);
+Route::resource('providers', ProviderController::class);
+Route::resource('clients', ClientController::class);
+Route::resource('categories','App\Http\Controllers\CategoryController');
+
 
 
 
